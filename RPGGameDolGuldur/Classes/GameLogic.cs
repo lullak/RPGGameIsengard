@@ -47,13 +47,14 @@ namespace RPGGameIsengard.Classes
 
         public void StartGameLoop()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("You wake up starved and with a headache, you notice that you are wet!");
 
             while (!IsGameOver)
             {
                 Room currentRoom = Rooms[Character.CharacterCurrentRoomNumber];
-                
 
+                
                 Console.Write("\nWhat do you want to do? (move, pickup, drop, look around, inventory, save, load or quit) ");
                 string action = Console.ReadLine().ToLower();
 
