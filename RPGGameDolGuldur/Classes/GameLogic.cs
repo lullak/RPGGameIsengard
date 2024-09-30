@@ -31,7 +31,7 @@ namespace RPGGameIsengard.Classes
 
             List<Item> itemsKitchen = new List<Item> { Item.RawMeat(), Item.Key() };
             List<Door> exitKitchen = new List<Door> { new("East", false) };
-            Rooms.Add(new Room("Kitchen", "Ýou seemed to have entered somekind of a kitchen.", itemsKitchen, exitKitchen, false));
+            Rooms.Add(new Room("Kitchen", "You seem to have entered somekind of a kitchen.", itemsKitchen, exitKitchen, false));
 
             List<Item> itemsBarracks = new List<Item> { Item.Sword() };
             List<Door> exitBarracks = new List<Door> { new("West", false), new("North", true) };
@@ -241,7 +241,7 @@ namespace RPGGameIsengard.Classes
                 {
                     Character.CharacterCurrentRoomNumber = newRoomIndex;
 
-                    return $"\nYou moved {movementDirection} to {Rooms[newRoomIndex].Name}. {Rooms[newRoomIndex].Description}";
+                    return $"\nYou moved {movementDirection} to the {Rooms[newRoomIndex].Name}. {Rooms[newRoomIndex].Description}";
                 }
             }
 
