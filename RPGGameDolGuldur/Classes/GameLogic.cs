@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace RPGGameIsengard.Classes
+﻿namespace RPGGameIsengard.Classes
 {
     public class GameLogic
     {
