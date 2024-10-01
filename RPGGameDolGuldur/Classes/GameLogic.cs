@@ -75,28 +75,14 @@ namespace RPGGameIsengard.Classes
                         Console.Write("Which item do you want to pick up? ");
                         string itemName = Console.ReadLine();
                         Item itemToPickUp = currentRoom.Items.FirstOrDefault(i => i.Name.ToLower() == itemName.ToLower());
-                        if (itemToPickUp != null)
-                        {
-                            PickUpItem(currentRoom, itemToPickUp);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Item not found.");
-                        }
+                        PickUpItem(currentRoom, itemToPickUp);
                         break;
 
                     case "drop":
                         Console.Write("Which item do you want to drop? ");
                         string dropItemName = Console.ReadLine();
                         Item itemToDrop = Character.Items.FirstOrDefault(i => i.Name.ToLower() == dropItemName.ToLower());
-                        if (itemToDrop != null)
-                        {
-                            DropItem(currentRoom, itemToDrop);
-                        }
-                        else
-                        {
-                            Console.WriteLine("You don't have that item.");
-                        }
+                        DropItem(currentRoom, itemToDrop);
                         break;
 
                     case "look around":
@@ -236,12 +222,12 @@ namespace RPGGameIsengard.Classes
                     }
                 }
 
-                int newRoomIndex = GetRoom(Character.CharacterCurrentRoomNumber, movementDirection);
-                if (newRoomIndex != -1)
+                int roomIndex = GetRoom(Character.CharacterCurrentRoomNumber, movementDirection);
+                if (roomIndex != -1)
                 {
-                    Character.CharacterCurrentRoomNumber = newRoomIndex;
+                    Character.CharacterCurrentRoomNumber = roomIndex;
 
-                    return $"\nYou moved {movementDirection} to the {Rooms[newRoomIndex].Name}. {Rooms[newRoomIndex].Description}";
+                    return $"\nYou moved {movementDirection} to the {Rooms[roomIndex].Name}. {Rooms[roomIndex].Description}";
                 }
             }
 
