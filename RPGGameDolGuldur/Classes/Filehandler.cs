@@ -2,7 +2,7 @@
 
 namespace RPGGameIsengard.Classes
 {
-    public static class Repositery
+    public static class Filehandler
     {
         private static readonly string _filePath = "GameStateLoad.json";
 

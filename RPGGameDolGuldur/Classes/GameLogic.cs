@@ -128,7 +128,7 @@
                         break;
 
                     case "load":
-                        GameLogic load = Repositery.LoadGame();
+                        GameLogic load = Filehandler.LoadGame();
                         if(load != null)
                         {
                             this.Character = load.Character;
@@ -138,7 +138,7 @@
                         }
                         break;
                     case "save":
-                        Repositery.SaveGame(this);
+                        Filehandler.SaveGame(this);
                         Console.WriteLine("You saved the game.");
                         break;
                     case "quit":
