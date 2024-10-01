@@ -4,17 +4,16 @@ namespace RPGGameIsengard.Classes
 {
     public static class Repositery
     {
+        private static readonly string _filePath = "GameStateLoad.json";
 
         public static GameLogic LoadGame()
         {
-            string gameState = File.ReadAllText("GameStateLoad.json");
-            return JsonSerializer.Deserialize<GameLogic>(gameState);
+            return JsonSerializer.Deserialize<GameLogic>(File.ReadAllText(_filePath));
         }
 
         public static void SaveGame(GameLogic game)
         {
-            string gameState = JsonSerializer.Serialize(game);
-            File.WriteAllText("GameStateLoad.json", gameState);
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(game));
         }
     }
 }
