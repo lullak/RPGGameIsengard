@@ -248,6 +248,7 @@ namespace RPGGameIsengard.Classes
                 {"Barracks_north", 4}
             };
 
+            //rumindex enligt listan av rummen
             string currentRoomDirection = $"{Rooms[currentRoomIndex].Name}_{movementDirection}";
 
             if (moveableRooms.ContainsKey(currentRoomDirection))
